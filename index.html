@@ -2,19 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teste Plot</title>
 </head>
 
 <body>
-  <div class="map"></div>
+  <div class="container" id="map"></div>
+  <!-- <div class="container" id="horizon"></div> -->
+  <div class="container" id="table"></div>
 </body>
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
+<!-- <script type="text/javascript" src="map.js"></script> -->
+<script type="text/javascript" src="horizon.js"></script>
+<script type="text/javascript" src="table.js"></script>
 
 <style>
   html,
@@ -25,7 +29,7 @@
     height: 100%;
   }
 
-  .map {
+  .container {
     width: 50%;
     height: 50%;
   }
@@ -54,6 +58,43 @@
     opacity: 0.9;
     position: absolute;
     font-size: small;
+  }
+
+
+
+
+  #table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Zebra striping */
+  tr:nth-of-type(odd) {
+    background: #eee;
+  }
+
+  th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    cursor: s-resize;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+  }
+
+  td,
+  th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  th.des:after {
+    content: "\21E9";
+  }
+
+  th.aes:after {
+    content: "\21E7";
   }
 </style>
 
